@@ -102,8 +102,8 @@ def compute_loss(p, targets, model):  # predictions, targets, model
     
             # adicionar conversao de bounding box ao formato gaussiao
 
-            iou = bbox_piou(pbox.T, tbox[i], x1y1x2y2=False, hellinger=hellinger)
-            #iou = bbox_iou(pbox.T, tbox[i], x1y1x2y2=False, GIoU=True)  # iou(prediction, target)
+            #iou = bbox_piou(pbox.T, tbox[i], x1y1x2y2=False, hellinger=hellinger)
+            iou = bbox_iou(pbox.T, tbox[i], x1y1x2y2=False, GIoU=True)  # iou(prediction, target)
 
             # -- Hellinger = False
 
